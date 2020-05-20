@@ -1,1 +1,1 @@
-recursive-include imnet *.py *.pyx *.c *.h
+recursive-include imnet3 *.py *.pyx *.c *.h

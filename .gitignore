@@ -14,3 +14,6 @@ imnet.egg-info
 .idea
 dist
 venv
+imnet3\.egg-info/
+
+log\.txt

@@ -2,7 +2,6 @@ from Levenshtein import distance
 import numpy as np
 from collections import defaultdict
 import cython
-from libc.stdlib cimport abs
 
 @cython.boundscheck(False)
 def get_degrees_cython(int [:] idxs, list strings, int min_ld, int max_ld):

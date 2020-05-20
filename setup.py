@@ -15,8 +15,6 @@ except ImportError:
     warnings.warn('No cython found -- install will use pre-generated C files')
 
 
-
-
 def create_ext_modules():
     """
     Build commands require preinstalled numpy to compile the c extensions. A global "import numpy"
@@ -36,8 +34,8 @@ def create_ext_modules():
             except ImportError:
                 raise Exception(
                     "please install numpy, need numpy header files to compile c extensions")
-            ext_modules = [Extension("imnet.process_strings_cy",
-                                    sources=["imnet/process_strings_cy.pyx"],
+            ext_modules = [Extension("imnet3.process_strings_cy",
+                                    sources=["imnet3/process_strings_cy.pyx"],
                                     include_dirs=[numpy.get_include()])]
             if use_cython:
                 print('Using cython')
@@ -51,16 +49,15 @@ def create_ext_modules():
 currdir = os.getcwd()
 
 
-setup(name="imnet",
-      author="Rok Roskar",
-      version='0.1.post2',
-      author_email="roskar@ethz.ch",
-      url="http://github.com/rokroskar/imnet",
-      package_dir={'imnet/': ''},
-      packages=['imnet'],
+setup(name="imnet3",
+      author="Rok Roskar & Erand Smakaj",
+      version='0.3.alpha1',
+      author_email="erand.smakaj@fhnw.ch",
+      url="https://github.com/aihealthlab/imnet",
+      package_dir={'imnet3/': ''},
+      packages=['imnet3'],
       ext_modules=create_ext_modules(),
-      scripts=['scripts/imnet-analyze'],
-      install_requires=['click', 'findspark',
-                        'python-Levenshtein', 'scipy', 'networkx', 'pandas'],
-      keywords=['pyspark', 'genomics', 'hpc', 'bioinformatics']
+      scripts=['scripts/imnet3-analyze'],
+      install_requires=['click', 'python-Levenshtein', 'scipy', 'networkx', 'pandas'],
+      keywords=['genomics', 'bioinformatics']
       )
