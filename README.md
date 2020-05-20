@@ -10,8 +10,7 @@ Clone the repository and install:
 
 ```
 $ git clone https://github.com/aihealthlab/imnet.git
-$ cd imnet
-$ python setup.py install
+$ pip install ./imnet
 ```
 
 If you make changes to the cython code, you will need `cython` and a usable C compiler. 
